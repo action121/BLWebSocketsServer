@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EDB58A62B2AA27100305F65 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDB58A52B2AA20900305F65 /* libz.tbd */; };
 		B57C320B16AF3A46004A6B5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57C320A16AF3A46004A6B5F /* UIKit.framework */; };
 		B57C320D16AF3A46004A6B5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57C320C16AF3A46004A6B5F /* Foundation.framework */; };
 		B57C320F16AF3A46004A6B5F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57C320E16AF3A46004A6B5F /* CoreGraphics.framework */; };
@@ -41,7 +42,6 @@
 		B57C328816AF3B3B004A6B5F /* server.c in Sources */ = {isa = PBXBuildFile; fileRef = B57C328316AF3B3B004A6B5F /* server.c */; };
 		B57C328916AF3B3B004A6B5F /* sha-1.c in Sources */ = {isa = PBXBuildFile; fileRef = B57C328416AF3B3B004A6B5F /* sha-1.c */; };
 		B57C328C16AF3B4E004A6B5F /* BLWebSocketsServer.m in Sources */ = {isa = PBXBuildFile; fileRef = B57C328B16AF3B4E004A6B5F /* BLWebSocketsServer.m */; };
-		B57C329016AF3BF5004A6B5F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B57C328F16AF3BF5004A6B5F /* libz.dylib */; };
 		B57C329416AF4322004A6B5F /* www in Resources */ = {isa = PBXBuildFile; fileRef = B57C329316AF4322004A6B5F /* www */; };
 		B5D8FCD017247D2800AA1D8A /* BLAsyncMessageQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D8FCCF17247D2800AA1D8A /* BLAsyncMessageQueue.m */; };
 		B5D8FCF21725B91A00AA1D8A /* starwars.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5D8FCF11725B91A00AA1D8A /* starwars.txt */; };
@@ -58,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5EDB58A52B2AA20900305F65 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B57C320616AF3A46004A6B5F /* BLWebSocketsServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLWebSocketsServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57C320A16AF3A46004A6B5F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B57C320C16AF3A46004A6B5F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -116,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B57C329016AF3BF5004A6B5F /* libz.dylib in Frameworks */,
+				5EDB58A62B2AA27100305F65 /* libz.tbd in Frameworks */,
 				B57C320B16AF3A46004A6B5F /* UIKit.framework in Frameworks */,
 				B57C320D16AF3A46004A6B5F /* Foundation.framework in Frameworks */,
 				B57C320F16AF3A46004A6B5F /* CoreGraphics.framework in Frameworks */,
@@ -159,6 +160,7 @@
 		B57C320916AF3A46004A6B5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5EDB58A52B2AA20900305F65 /* libz.tbd */,
 				B57C328F16AF3BF5004A6B5F /* libz.dylib */,
 				B57C320A16AF3A46004A6B5F /* UIKit.framework */,
 				B57C320C16AF3A46004A6B5F /* Foundation.framework */,
@@ -296,10 +298,16 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Benjamin Loulier";
+				TargetAttributes = {
+					B57C320516AF3A46004A6B5F = {
+						DevelopmentTeam = 299PDL32RZ;
+						ProvisioningStyle = Manual;
+					};
+				};
 			};
 			buildConfigurationList = B57C320016AF3A46004A6B5F /* Build configuration list for PBXProject "BLWebSocketsServer" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -495,10 +503,17 @@
 		B57C324316AF3A47004A6B5F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 299PDL32RZ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/BLWebSocketsServer-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/BLWebSocketsServer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gwm.BLWebSocketsServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = gwmAllDev;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -506,10 +521,17 @@
 		B57C324416AF3A47004A6B5F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 299PDL32RZ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/BLWebSocketsServer-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/BLWebSocketsServer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gwm.BLWebSocketsServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = gwmAllDev;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
